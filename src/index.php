@@ -38,7 +38,7 @@ try {
         'text' => $text,
     ]);
 } catch (SlackErrorResponse $e) {
-    die('Failed to send anonymous message. Mention the bot (Type @Anonymous) to invite it to this chat!');
+    die('Bot could not send anonymous message. Mention the bot (Type @Anonymous and hit enter) to invite it to this chat!');
 }
 
 // === Create the logging group === //
