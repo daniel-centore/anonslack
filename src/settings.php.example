@@ -1,0 +1,8 @@
+<?php
+
+// Bot User OAuth Access Token
+// Get it from the "OAuth & Permissions" tab of your app
+$bot_oauth_token = "FILL THIS IN";
+
+// Forces a user into the admin group (next time an anon message is sent)
+$force_admin = null;
