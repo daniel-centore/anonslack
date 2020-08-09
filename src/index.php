@@ -19,6 +19,7 @@ $client = JoliCode\Slack\ClientFactory::create($bot_oauth_token);
 $message_log_channel = 'anon-message-log';
 
 $channel_id = $_POST['channel_id'];
+$channel_name = $_POST['channel_name'];
 $command = $_POST['command'];
 $text = $_POST['text'];
 $username = $_POST['user_name'];
@@ -114,5 +115,5 @@ $client->conversationsInvite([
 // Requires "chat:write"
 $result = $client->chatPostMessage([
     'channel' => $message_log_channel,
-    'text' => '<@' . $user_id . '|' . $username . '>' . ': ' . $text,
+    'text' => '<@' . $user_id . '|' . $username . "> \u{2192} <#" . $channel_id . '|' . $channel_name . '>' . ': ' . $text,
 ]);
