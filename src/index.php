@@ -22,6 +22,7 @@ $channel_id = $_POST['channel_id'];
 $command = $_POST['command'];
 $text = $_POST['text'];
 $username = $_POST['user_name'];
+$user_id = $_POST['user_id'];
 
 if (empty($text)) {
     die("Please include a message. For example: `/a Hello everybody!`");
@@ -113,5 +114,5 @@ $client->conversationsInvite([
 // Requires "chat:write"
 $result = $client->chatPostMessage([
     'channel' => $message_log_channel,
-    'text' => $username . ':' . "\n" . $text,
+    'text' => '<@' . $user_id . '|' . $username . '>' . ': ' . $text,
 ]);
